@@ -1,20 +1,20 @@
 "use client";
 import useLoadPeople from "../hooks/useLoadPeople";
-import TambleHeaderComponent from "./table-header";
-import TambleRowComponent from "./table-row";
+import TableHeaderComponent from "./table-header";
+import TableRowComponent from "./table-row";
 
-export default function TambleComponent() {
-  const { people, nextPageUrl, ref, inView } = useLoadPeople();
+export default function TableComponent() {
+  const { people, nextPageUrl, ref } = useLoadPeople();
 
   return (
     <>
       <table className="w-full text-sm text-left">
         <thead className="bg-blue-50">
-          <TambleHeaderComponent />
+          <TableHeaderComponent />
         </thead>
         <tbody>
           {people?.map((person) => (
-            <TambleRowComponent
+            <TableRowComponent
               key={person.name}
               name={person.name}
               height={person.height}
@@ -30,7 +30,7 @@ export default function TambleComponent() {
         </div>
       )}
 
-      <div ref={ref}>{`Header inside viewport ${inView}.`}</div>
+      <div ref={ref} />
     </>
   );
 }
