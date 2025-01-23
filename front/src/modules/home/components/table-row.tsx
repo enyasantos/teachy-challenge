@@ -1,12 +1,25 @@
+import { heightTransform } from "../utils/height-transform";
 import TambleRowItemComponent from "./table-row-item";
 
-export default function TambleRowComponent() {
+interface Props {
+  name: string;
+  height: string;
+  starshipsCount: number;
+  films: string[];
+}
+
+export default function TambleRowComponent({
+  name,
+  height,
+  starshipsCount,
+  films,
+}: Props) {
   return (
-    <tr className="border-b">
-      <TambleRowItemComponent content="Luke Skywalker" />
-      <TambleRowItemComponent content="1,72m" />
-      <TambleRowItemComponent content="27" />
-      <TambleRowItemComponent content="A New Hope, The Empire Strikes..." />
+    <tr className="border-b border-x">
+      <TambleRowItemComponent content={name} />
+      <TambleRowItemComponent content={heightTransform(height)} />
+      <TambleRowItemComponent content={starshipsCount.toString()} />
+      <TambleRowItemComponent content={films.join(", ")} />
     </tr>
   );
 }
