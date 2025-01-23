@@ -28,10 +28,8 @@ const useLoadPeople = () => {
   }, [nextPageUrl]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (inView) {
-        fetchPeople();
-      }
+    if (inView) {
+      fetchPeople();
     }
   }, [fetchPeople, inView]);
 

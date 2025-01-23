@@ -1,12 +1,12 @@
-import TableHeaderItemComponent from "./table-header-item";
+import TableHeaderItem from "./table-header-item";
 
-export default function TableHeaderComponent() {
+export default function TableHeader() {
   return (
     <tr className="border">
-      <TableHeaderItemComponent content="Nome" />
-      <TableHeaderItemComponent content="Altura" />
-      <TableHeaderItemComponent content="Nº de espaçonaves" />
-      <TableHeaderItemComponent content="Filmes" />
+      <TableHeaderItem content="Nome" />
+      <TableHeaderItem content="Altura" />
+      <TableHeaderItem content="Nº de espaçonaves" />
+      <TableHeaderItem content="Filmes" />
     </tr>
   );
 }

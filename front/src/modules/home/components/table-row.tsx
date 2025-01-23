@@ -1,5 +1,5 @@
 import { heightTransform } from "../utils/height-transform";
-import TableRowItemComponent from "./table-row-item";
+import TableRowItem from "./table-row-item";
 
 interface Props {
   name: string;
@@ -8,7 +8,7 @@ interface Props {
   films: string[];
 }
 
-export default function TableRowComponent({
+export default function TableRow({
   name,
   height,
   starshipsCount,
@@ -16,10 +16,10 @@ export default function TableRowComponent({
 }: Props) {
   return (
     <tr className="border-b border-x">
-      <TableRowItemComponent content={name} />
-      <TableRowItemComponent content={heightTransform(height)} />
-      <TableRowItemComponent content={starshipsCount.toString()} />
-      <TableRowItemComponent content={films.join(", ")} />
+      <TableRowItem content={name} />
+      <TableRowItem content={heightTransform(height)} />
+      <TableRowItem content={starshipsCount.toString()} />
+      <TableRowItem content={films.join(", ")} />
     </tr>
   );
 }

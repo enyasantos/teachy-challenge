@@ -1,20 +1,22 @@
 "use client";
 import useLoadPeople from "../hooks/useLoadPeople";
-import TableHeaderComponent from "./table-header";
-import TableRowComponent from "./table-row";
+import Loader from "./loader";
+import Pagination from "./pagination";
+import TableHeader from "./table-header";
+import TableRow from "./table-row";
 
-export default function TableComponent() {
-  const { people, nextPageUrl, ref } = useLoadPeople();
+export default function Table() {
+  const { people, nextPageUrl, ref, loading } = useLoadPeople();
 
   return (
     <>
       <table className="w-full text-sm text-left">
         <thead className="bg-blue-50">
-          <TableHeaderComponent />
+          <TableHeader />
         </thead>
         <tbody>
           {people?.map((person) => (
-            <TableRowComponent
+            <TableRow
               key={person.name}
               name={person.name}
               height={person.height}
@@ -24,13 +26,8 @@ export default function TableComponent() {
           ))}
         </tbody>
       </table>
-      {!nextPageUrl && (
-        <div className="text-center uppercase text-sm">
-          No more people found
-        </div>
-      )}
-
-      <div ref={ref} />
+      {loading && <Loader />}
+      <Pagination nextPageUrl={nextPageUrl} ref={ref} />
     </>
   );
 }

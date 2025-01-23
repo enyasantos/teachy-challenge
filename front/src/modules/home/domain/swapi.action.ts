@@ -1,3 +1,5 @@
+"use server";
+
 export interface SwapiStarWarsPeopleResponse {
   count: number;
   next: string | null;

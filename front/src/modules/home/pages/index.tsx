@@ -1,4 +1,4 @@
-import TableComponent from "../components/table";
+import Tamble from "../components/table";
 
 export default function StartWarsPage() {
   return (
@@ -7,7 +7,7 @@ export default function StartWarsPage() {
         Personagens dos filmes de Star Wars
       </h1>
       <section className="relative overflow-x-auto rounded-lg">
-        <TableComponent />
+        <Tamble />
       </section>
     </article>
   );
