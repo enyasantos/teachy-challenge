@@ -1,33 +1,83 @@
 # Teachy Frontend Challenge
 
-## Instruções Gerais
+Este projeto consiste no desenvolvimento de uma aplicação web para exibição de informações sobre os personagens do universo Star Wars, utilizando a [API oficial](https://swapi.dev/). A aplicação implementa **paginações infinitas**.
 
-1. *Clone* este repositório
-2. Em seu *fork*, atenda os casos de usos especificados
-3. Nos notifique de sua entrega para que possamos dar prosseguimento ao processo.
+## Funcionalidades
 
-## Desafio
+- Exibição dos personagens de Star Wars com dados como nome, gênero, altura, e muito mais.
+- Implementação de **paginações infinitas** para carregar mais personagens à medida que o usuário rola a página.
+- Interface interativa e responsiva, projetada para proporcionar uma experiência de usuário fluida e sem interrupções.
 
-A ideia é conhecer um pouco sobre como você trabalha e pensa de forma prática. O projeto estar no repositório e documentados no README da raiz do projeto. Abaixo temos detalhes sobre os requisitos de cada desafio.
+## Layout
 
+O layout da aplicação segue o seguinte design:
 
-### 1. Desenvolvimento frontend
+![Layout Referência](https://github.com/user-attachments/assets/96bfbf45-66fe-4dfd-98a1-d65e9c9b91fc)
 
-Implementação de uma aplicação web para a construção de slides de forma interativa. Use redux para armazenamento de informações.
+## Tecnologias Utilizadas
 
-- O usuário deverá poder criar um documento com uma ou main páginas
-- O usuário deverá poder arrastar ou fazer upload de imagens para o domento e cortá-lo/redimensioná-lo
-- a pessoa poderá escrever no documento Canva-like
+- [Next.Js v15.1.6](https://nextjs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
 
-Segue uma referência visual:
+## Requisitos
 
-<img width="789" alt="Captura de Tela 2024-07-18 às 17 49 12" src="https://static-cse.canva.com/blob/1344486/feature_StockImages_how-to2x.03f6bd98.jpg">
+- Node.js
+- pnpm
 
-Ela precisa ser desenvolvida utilizando *NextJS* e *Tailwind*. Também é necessária uma instrução de como rodar o projeto.
+## Iniciando o Projeto
 
-Referências:
- - https://tailwindcss.com/
- - https://nextjs.org/
- - https://react.dev/
+Siga os passos abaixo para rodar o projeto no seu ambiente local:
 
-Sinta-se à vontade para tirar dúvidas.
+1. Clone o repositório:
+
+```sh
+git clone https://github.com/enyasantos/teachy-challenge
+cd ./front
+```
+
+2. Instale as dependências do projeto:
+
+```sh
+pnpm install
+```
+
+3. Crie um arquivo .env.local com os dados do arquivo .env.example
+
+```
+SWAPI_URL="https://swapi.dev/api"
+```
+
+4. Para rodar o projeto em modo de desenvolvimento com recarga ao vivo, execute:
+
+```sh
+pnpm dev
+```
+
+5. Abra http://localhost:3000 no seu navegador favorito para visualizar o projeto.
+
+## Executando com Docker
+
+### Pré-requisitos
+
+Antes de começar, você precisa ter o seguinte instalado na sua máquina:
+
+- [Docker](https://www.docker.com/get-started) - Para executar o aplicativo dentro de um contêiner.
+- [Docker Compose](https://docs.docker.com/compose/) - Para orquestrar múltiplos contêineres.
+
+### Executando o Docker
+
+1. Construção da Imagem Docker
+
+Para construir a imagem Docker do projeto, execute o seguinte comando:
+
+```sh
+docker build -t teachy-app .
+```
+
+2. Iniciando o Aplicativo com Docker Compose
+
+Para iniciar o aplicativo e seus serviços usando Docker Compose, execute o comando abaixo:
+
+```sh
+ docker compose up
+```
