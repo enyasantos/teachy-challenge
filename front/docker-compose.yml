@@ -1,16 +1,18 @@
-version: "3.7"
+version: "3.9"
 
 services:
   app-teachy:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - SWAPI_URL=https://swapi.dev/api
     container_name: teachy-challenge
-    environment:
-      - API_URL=https://swapi.dev/api
     volumes:
       - .:/app
       - /app/node_modules
       - /app/.next
     ports:
       - "3000:3000"
+    environment:
+      - SWAPI_URL=https://swapi.dev/api
